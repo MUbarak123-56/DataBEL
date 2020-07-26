@@ -90,7 +90,7 @@ table %>%
   ggplot(aes(reorder(Team.Name, GF), GF, fill = Team.Name)) +
   geom_bar(stat = "identity", color = "black") +
   labs(title = "Manchester City scored the most", 
-       y = "Games Won", x = "Team Name") +
+       y = "Goals Scored", x = "Team Name") +
   coord_flip() +
   theme_classic()
 ggsave("goals-scored.png")
@@ -99,7 +99,7 @@ table %>%
   ggplot(aes(reorder(Team.Name, GA), GA, fill = Team.Name)) +
   geom_bar(stat = "identity", color = "black") +
   labs(title = "Norwich City left their net open",
-       y = "Games Lost", x = "Team Name") +
+       y = "Goals Conceded", x = "Team Name") +
   coord_flip() +
   theme_classic()
 ggsave("goals-conceded.png")
