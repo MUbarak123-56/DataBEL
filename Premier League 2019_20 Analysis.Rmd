@@ -1,0 +1,133 @@
+---
+title: "Premier League 2019/20 season analysis"
+output:
+  pdf_document: default
+  pdf document: default
+---
+
+## This is a document for analyzing the Premier League seasonal performance of players and teams
+
+### Loading Required Packages
+
+```{r, packages}
+library(tidyverse)
+```
+
+### Loading Required Datasets
+
+```{r, load-data}
+table <- read.csv("~/DataBEL/Premier League 2019_20 Table.csv")
+assists <- read.csv("~/DataBEL/Premier League 2019_20 Assists.csv",
+                    encoding = "UTF-8")
+goals <- read.csv("~/DataBEL/Premier League 2019_20 Goal Scored.csv", 
+                  encoding = "UTF-8")
+clean_sheets <- read.csv("~/DataBEL/Premier League 2019_20 Clean Sheets.csv",
+                         encoding = "UTF-8")
+```
+
+### The Final Premier League 2019/20 Table
+
+```{r, table}
+knitr::kable(table, caption = "Premier League 2019/20 season")
+```
+
+### Biggest Winners vs Biggest Losers
+
+```{r, win-vs-lose, fig.width = 9, fig.height = 9}
+table %>% 
+  arrange(desc(Won)) %>%
+  ggplot(aes(reorder(Team.Name, Won), Won, fill = Team.Name)) +
+  geom_bar(stat = "identity", color = "black") +
+  labs(title = "The biggest winners in 2019/20 season", 
+       y = "Games Won", x = "Team Name") +
+  coord_flip() +
+  theme_classic()
+ggsave("table-won.png")
+table %>% 
+  arrange(desc(Lost)) %>%
+  ggplot(aes(reorder(Team.Name, Lost), Lost, fill = Team.Name)) +
+  geom_bar(stat = "identity", color = "black") +
+  labs(title = "The biggest losers in 2019/20 season", 
+       y = "Games Lost", x = "Team Name") +
+  coord_flip() +
+  theme_classic()
+ggsave("table-lost.png")
+
+```
+
+### Who Shared the Most Points?
+
+```{r, draw, fig.width = 9,fig.height = 9}
+table %>% 
+  arrange(desc(Drawn)) %>%
+  ggplot(aes(reorder(Team.Name, Drawn), Drawn, fill = Team.Name)) +
+  geom_bar(stat = "identity", color = "black") +
+  labs(title = "The biggest point sharers in 2019/20 season", 
+       y = "Games Drawn", x = "Team Name") +
+  coord_flip() +
+  theme_classic()
+ggsave("table-drawn.png")
+```
+
+### Goals Scored vs Goals Conceded
+
+```{r, gs-vs-gc, fig.width = 9, fig.height = 9}
+table %>% 
+  arrange(desc(GF)) %>%
+  ggplot(aes(reorder(Team.Name, GF), GF, fill = Team.Name)) +
+  geom_bar(stat = "identity", color = "black") +
+  labs(title = "What team grabbed the most three points?", 
+       y = "Games Won", x = "Team Name") +
+  coord_flip() +
+  theme_classic()
+ggsave("goals-scored.png")
+table %>% 
+  arrange(desc(GA)) %>%
+  ggplot(aes(reorder(Team.Name, GA), GA, fill = Team.Name)) +
+  geom_bar(stat = "identity", color = "black") +
+  labs(title = "What team lost the most three points?",
+       y = "Games Lost", x = "Team Name") +
+  coord_flip() +
+  theme_classic()
+ggsave("goals-conceded.png")
+```
+
+### Highest Goal Scorers
+
+```{r, top-gs, fig.width = 9, fig.height = 9}
+goals %>% 
+  arrange(desc(goals_scored)) %>% 
+  ggplot(aes(reorder(Player, goals_scored), goals_scored, fill = Player)) +
+  geom_bar(stat = "identity", color = "black") +
+  labs(title = "Highest Goal Scorers in 2019/20 season",
+       y = "Goals Scored", x = "Player Name") +
+  coord_flip()
+ggsave("goal-scorers.png")
+```
+
+### Top Playmakers
+
+```{r, assists, fig.width= 9, fig.height= 9}
+assists %>% 
+  arrange(desc(Assists)) %>% 
+  ggplot(aes(reorder(Player, Assists), Assists, fill = Player)) +
+  geom_bar(stat = "identity", color = "black") +
+  labs(title = "Top Playmakers in 2019/20 season",
+       y = "Assists", x = "Player Name") +
+  coord_flip()
+ggsave("assists.png")
+```
+
+### Most Clean Sheets
+
+```{r, clean-sheets, fig.width = 9, fig.height = 9}
+clean_sheets %>% 
+  arrange(desc(clean_sheets)) %>% 
+  ggplot(aes(reorder(Player, clean_sheets), clean_sheets, fill = Player)) +
+  geom_bar(stat = "identity", color = "black") +
+  labs(title = "Most Clean Sheets in 2019/20 season",
+       y = "Clean Sheets", x = "Player Name") +
+  coord_flip()
+ggsave("clean-sheets.png")
+```
+
