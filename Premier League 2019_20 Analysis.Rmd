@@ -38,8 +38,9 @@ colnames(clean_sheets)
 ### The Final Premier League 2019/20 Table
 
 ```{r, table}
-pdf("PL table.pdf", height=11, width=8.5)
+pdf("PL-table.pdf", height=11, width=8.5)
 grid.table(table)
+dev.off()
 knitr::kable(table, caption = "Premier League 2019/20 season")
 ```
 
@@ -50,7 +51,7 @@ table %>%
   arrange(desc(Won)) %>%
   ggplot(aes(reorder(Team.Name, Won), Won, fill = Team.Name)) +
   geom_bar(stat = "identity", color = "black") +
-  labs(title = "The biggest winners in 2019/20 season", 
+  labs(title = "Liverpool can't stop winning", 
        y = "Games Won", x = "Team Name") +
   coord_flip() +
   theme_classic()
@@ -59,7 +60,7 @@ table %>%
   arrange(desc(Lost)) %>%
   ggplot(aes(reorder(Team.Name, Lost), Lost, fill = Team.Name)) +
   geom_bar(stat = "identity", color = "black") +
-  labs(title = "The biggest losers in 2019/20 season", 
+  labs(title = "Norwich loses a lot", 
        y = "Games Lost", x = "Team Name") +
   coord_flip() +
   theme_classic()
@@ -74,7 +75,7 @@ table %>%
   arrange(desc(Drawn)) %>%
   ggplot(aes(reorder(Team.Name, Drawn), Drawn, fill = Team.Name)) +
   geom_bar(stat = "identity", color = "black") +
-  labs(title = "The biggest point sharers in 2019/20 season", 
+  labs(title = "Sharing is Caring", 
        y = "Games Drawn", x = "Team Name") +
   coord_flip() +
   theme_classic()
@@ -88,7 +89,7 @@ table %>%
   arrange(desc(GF)) %>%
   ggplot(aes(reorder(Team.Name, GF), GF, fill = Team.Name)) +
   geom_bar(stat = "identity", color = "black") +
-  labs(title = "What team grabbed the most three points?", 
+  labs(title = "Manchester City scored the most", 
        y = "Games Won", x = "Team Name") +
   coord_flip() +
   theme_classic()
@@ -97,7 +98,7 @@ table %>%
   arrange(desc(GA)) %>%
   ggplot(aes(reorder(Team.Name, GA), GA, fill = Team.Name)) +
   geom_bar(stat = "identity", color = "black") +
-  labs(title = "What team lost the most three points?",
+  labs(title = "Norwich City left their net open",
        y = "Games Lost", x = "Team Name") +
   coord_flip() +
   theme_classic()
@@ -111,7 +112,7 @@ goals %>%
   arrange(desc(goals_scored)) %>% 
   ggplot(aes(reorder(Player, goals_scored), goals_scored, fill = Player)) +
   geom_bar(stat = "identity", color = "black") +
-  labs(title = "Highest Goal Scorers in 2019/20 season",
+  labs(title = "Jamie Vardy -- Chat S***, Get Banged",
        y = "Goals Scored", x = "Player Name") +
   coord_flip()
 ggsave("goal-scorers.png")
@@ -124,7 +125,7 @@ assists %>%
   arrange(desc(Assists)) %>% 
   ggplot(aes(reorder(Player, Assists), Assists, fill = Player)) +
   geom_bar(stat = "identity", color = "black") +
-  labs(title = "Top Playmakers in 2019/20 season",
+  labs(title = "De Bruyne is a Play-magician",
        y = "Assists", x = "Player Name") +
   coord_flip()
 ggsave("assists.png")
@@ -137,7 +138,7 @@ clean_sheets %>%
   arrange(desc(clean_sheets)) %>% 
   ggplot(aes(reorder(Player, clean_sheets), clean_sheets, fill = Player)) +
   geom_bar(stat = "identity", color = "black") +
-  labs(title = "Most Clean Sheets in 2019/20 season",
+  labs(title = "Ederson's gloves are so clean",
        y = "Clean Sheets", x = "Player Name") +
   coord_flip()
 ggsave("clean-sheets.png")
