@@ -11,6 +11,7 @@ output:
 
 ```{r, packages}
 library(tidyverse)
+library(gridExtra)
 ```
 
 ### Loading Required Datasets
@@ -25,9 +26,20 @@ clean_sheets <- read.csv("~/DataBEL/Premier League 2019_20 Clean Sheets.csv",
                          encoding = "UTF-8")
 ```
 
+### Column names of the datasets
+
+```{r, col-names}
+colnames(table)
+colnames(assists)
+colnames(goals)
+colnames(clean_sheets)
+```
+
 ### The Final Premier League 2019/20 Table
 
 ```{r, table}
+pdf("PL table.pdf", height=11, width=8.5)
+grid.table(table)
 knitr::kable(table, caption = "Premier League 2019/20 season")
 ```
 
