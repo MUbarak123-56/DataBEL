@@ -1,0 +1,179 @@
+country,year,LifeExp,income,population,continent
+Afghanistan,2020,64.4,1800,38900000,Asia
+Albania,2020,78.6,13200,2880000,Europe
+Algeria,2020,78.3,14000,43900000,Africa
+Andorra,2020,NA,55000,77300,Europe
+Angola,2020,65.4,5440,32900000,Africa
+Antigua and Barbuda,2020,77.4,25000,97900,The Americas
+Argentina,2020,77.1,17100,45200000,The Americas
+Armenia,2020,76,10200,2960000,Asia
+Australia,2020,82.8,45800,25500000,Oceania
+Austria,2020,82.1,47300,9010000,Europe
+Azerbaijan,2020,71.2,16400,10100000,Asia
+Bahrain,2020,79.9,42000,1700000,Middle East
+Bangladesh,2020,73.9,4400,165000000,Asia
+Barbados,2020,77.5,16700,287000,The Americas
+Belarus,2020,74.6,18200,9450000,Europe
+Belgium,2020,81.9,43900,11600000,Europe
+Belize,2020,74.5,7780,398000,The Americas
+Benin,2020,65.6,2310,12100000,Africa
+Bhutan,2020,75,10200,772000,Asia
+Bolivia,2020,73.6,7320,11700000,The Americas
+Bosnia and Herzegovina,2020,77.1,13500,3280000,Europe
+Botswana,2020,70,17200,2350000,Africa
+Brazil,2020,76.1,14500,213000000,The Americas
+Brunei,2020,75.8,75100,437000,Asia
+Bulgaria,2020,75.2,20900,6950000,Europe
+Burkina Faso,2020,62.9,1860,20900000,Africa
+Burundi,2020,62.6,628,11900000,Africa
+Cambodia,2020,70.7,4290,16700000,Asia
+Cameroon,2020,64.2,3460,26500000,Africa
+Canada,2020,82.3,44500,37700000,The Americas
+Central African Republic,2020,53.3,817,4830000,Africa
+Chad,2020,60.9,1790,16400000,Africa
+Chile,2020,80.1,23300,19100000,The Americas
+China,2020,77.7,18100,1440000000,Asia
+Colombia,2020,80.7,14000,50900000,The Americas
+Comoros,2020,69.3,2520,870000,Africa
+Costa Rica,2020,80,16000,5090000,The Americas
+Cote d'Ivoire,2020,63.7,4090,26400000,Africa
+Croatia,2020,79,25300,4110000,Europe
+Cuba,2020,78.6,8370,11300000,The Americas
+Cyprus,2020,82.2,35100,1210000,Europe
+Czech Republic,2020,79.6,35000,10700000,Europe
+Denmark,2020,81.1,48900,5790000,Europe
+Djibouti,2020,69,3710,988000,Africa
+Dominica,2020,NA,10900,72000,The Americas
+Dominican Republic,2020,73.7,17100,10800000,The Americas
+Ecuador,2020,77.4,10100,17600000,The Americas
+Egypt,2020,71.1,11800,102000000,Africa
+El Salvador,2020,74.7,7610,6490000,The Americas
+Equatorial Guinea,2020,66.6,17700,1400000,Africa
+Eritrea,2020,63.8,1420,3550000,Africa
+Estonia,2020,78.6,32900,1330000,Europe
+Ethiopia,2020,69.5,2000,115000000,Africa
+Fiji,2020,68.4,10200,896000,Oceania
+Finland,2020,81.9,42900,5540000,Europe
+France,2020,83.2,40400,65300000,Europe
+Gabon,2020,69.3,16500,2230000,Africa
+Georgia,2020,73.3,11300,3990000,Asia
+Germany,2020,81.1,46700,83800000,Europe
+Ghana,2020,66.4,4590,31100000,Africa
+Greece,2020,81.5,26300,10400000,Europe
+Grenada,2020,74.2,14700,113000,The Americas
+Guatemala,2020,73.3,7720,17900000,The Americas
+Guinea,2020,62,2500,13100000,Africa
+Guinea-Bissau,2020,61,1680,1970000,Africa
+Guyana,2020,69.6,8200,787000,The Americas
+Haiti,2020,66,1640,11400000,The Americas
+Honduras,2020,74.5,4720,9900000,The Americas
+Hungary,2020,77.3,30600,9660000,Europe
+Iceland,2020,83.2,47700,341000,Europe
+India,2020,69.7,7630,1380000000,Asia
+Indonesia,2020,72.1,12500,274000000,Asia
+Iran,2020,78,15900,84000000,Middle East
+Iraq,2020,77.2,16000,40200000,Middle East
+Ireland,2020,82.5,74100,4940000,Europe
+Israel,2020,83.4,34400,8660000,Middle East
+Italy,2020,83.6,36100,60500000,Europe
+Jamaica,2020,75,8350,2960000,The Americas
+Japan,2020,84.7,40100,126000000,Asia
+Jordan,2020,79.7,8440,10200000,Middle East
+Kazakhstan,2020,73.1,26000,18800000,Asia
+Kenya,2020,66.9,3260,53800000,Africa
+Kiribati,2020,63.1,2060,119000,Oceania
+Kuwait,2020,83.4,64300,4270000,Middle East
+Latvia,2020,75.5,28100,1890000,Europe
+Lebanon,2020,78.1,11900,6830000,Middle East
+Lesotho,2020,56.6,2900,2140000,Africa
+Liberia,2020,65.5,1130,5060000,Africa
+Libya,2020,73.5,14600,6870000,Africa
+Lithuania,2020,75.6,33500,2720000,Europe
+Luxembourg,2020,82.1,95100,626000,Europe
+Madagascar,2020,64.5,1520,27700000,Africa
+Malawi,2020,64.6,1210,19100000,Africa
+Malaysia,2020,75.2,30000,32400000,Asia
+Maldives,2020,82.4,14900,541000,Asia
+Mali,2020,63.3,2140,20300000,Africa
+Malta,2020,81.5,40400,442000,Europe
+Marshall Islands,2020,NA,3650,59200,Oceania
+Mauritania,2020,71.3,4030,4650000,Africa
+Mauritius,2020,75.2,22700,1270000,Africa
+Mexico,2020,75.7,18100,129000000,The Americas
+"Micronesia, Fed. Sts.",2020,67.6,3260,115000,Oceania
+Moldova,2020,73.2,6980,4030000,Europe
+Mongolia,2020,69.5,13200,3280000,Asia
+Montenegro,2020,76.8,18200,628000,Europe
+Morocco,2020,74.6,7980,36900000,Africa
+Mozambique,2020,60.4,1210,31300000,Africa
+Myanmar,2020,69.3,6620,54400000,Asia
+Namibia,2020,67.6,9660,2540000,Africa
+Nepal,2020,71.8,3020,29100000,Asia
+Netherlands,2020,81.9,51200,17100000,Europe
+New Zealand,2020,82.1,36700,4820000,Oceania
+Nicaragua,2020,79.5,4530,6620000,The Americas
+Niger,2020,63.6,974,24200000,Africa
+Nigeria,2020,65.6,5300,206000000,Africa
+North Korea,2020,72.5,1710,25800000,Asia
+North Macedonia,2020,76.9,14400,2080000,Europe
+Norway,2020,82.7,67500,5420000,Europe
+Oman,2020,77.8,36000,5110000,Middle East
+Pakistan,2020,67.3,5020,221000000,Asia
+Panama,2020,79.8,24300,4310000,The Americas
+Papua New Guinea,2020,59.1,3950,8950000,Oceania
+Paraguay,2020,76.5,12300,7130000,The Americas
+Peru,2020,81,13300,33000000,The Americas
+Philippines,2020,70.1,8640,110000000,Asia
+Poland,2020,78.5,30900,37800000,Europe
+Portugal,2020,82,29800,10200000,Europe
+Qatar,2020,80.6,116000,2880000,Middle East
+Romania,2020,75.6,26400,19200000,Europe
+Russia,2020,72.7,26200,146000000,Europe
+Rwanda,2020,69.5,2230,13000000,Africa
+Samoa,2020,73.3,6460,198000,Oceania
+Sao Tome and Principe,2020,67.5,3090,219000,Africa
+Saudi Arabia,2020,77.3,48200,34800000,Middle East
+Senegal,2020,68.9,3590,16700000,Africa
+Serbia,2020,76.2,17400,8740000,Europe
+Seychelles,2020,73.8,28500,98300,Africa
+Sierra Leone,2020,61.7,1500,7980000,Africa
+Singapore,2020,85.3,90500,5850000,Asia
+Slovenia,2020,81.6,34600,2080000,Europe
+Solomon Islands,2020,69,2170,687000,Oceania
+Somalia,2020,59.5,633,15900000,Africa
+South Africa,2020,67.2,12000,59300000,Africa
+South Korea,2020,83.2,38000,51300000,Asia
+South Sudan,2020,60,1950,11200000,Africa
+Spain,2020,83.5,36200,46800000,Europe
+Sri Lanka,2020,78,12400,21400000,Asia
+St. Lucia,2020,76,12800,184000,The Americas
+St. Vincent and the Grenadines,2020,72.7,11400,111000,The Americas
+Sudan,2020,71,4540,43800000,Africa
+Suriname,2020,72.4,14100,587000,The Americas
+Swaziland,2020,62.4,9510,1160000,Africa
+Sweden,2020,82.9,47400,10100000,Europe
+Switzerland,2020,84.4,59100,8650000,Europe
+Syria,2020,72.4,2910,17500000,Middle East
+Tajikistan,2020,71,3230,9540000,Asia
+Tanzania,2020,68.1,3060,59700000,Africa
+Thailand,2020,78.8,17900,69800000,Asia
+Timor-Leste,2020,71.5,7010,1320000,Asia
+Togo,2020,65.3,1650,8280000,Africa
+Tonga,2020,72.1,6130,106000,Oceania
+Trinidad and Tobago,2020,74.6,28800,1400000,The Americas
+Tunisia,2020,78.9,11300,11800000,Africa
+Turkey,2020,79.7,25500,84300000,Europe
+Turkmenistan,2020,70.5,18500,6030000,Asia
+Uganda,2020,67,1920,45700000,Africa
+Ukraine,2020,70.9,8770,43700000,Europe
+United Arab Emirates,2020,73.8,65300,9890000,Middle East
+United Kingdom,2020,81.2,40700,67900000,Europe
+United States,2020,78.6,57500,331000000,The Americas
+Uruguay,2020,77.5,21300,3470000,The Americas
+Uzbekistan,2020,70.8,6790,33500000,Asia
+Vanuatu,2020,65.1,2910,307000,Oceania
+Venezuela,2020,75.1,9050,28400000,The Americas
+Vietnam,2020,74.8,7350,97300000,Asia
+Yemen,2020,68.2,2330,29800000,Middle East
+Zambia,2020,64.3,3650,18400000,Africa
+Zimbabwe,2020,62.3,2410,14900000,Africa

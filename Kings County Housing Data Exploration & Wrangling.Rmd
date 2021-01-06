@@ -1,0 +1,102 @@
+---
+title: "Kingston County Housing Data Wrangling"
+output: pdf_document
+---
+
+# This is a Noteboook designed to clean, wrangle and explore the Kingston Housing Dataset
+
+## Loading Packages
+
+```{r, kc-load-packages}
+library(tidyverse)
+```
+
+## Loading dataset
+
+```{r, kc-load-data}
+df_kc <- read.csv("~/DataBEL/kc_house_data.csv")
+
+```
+
+## Checking out dataset
+
+```{r}
+nrow(df_kc)
+colnames(df_kc)
+head(df_kc, 20)
+
+```
+
+## Graphs
+
+```{r}
+unique(df_kc$floors)
+```
+
+### Housing Price vs Square foot
+
+```{r}
+print_out <- function(df, x) {
+  df_kc2 <- df_kc %>%
+    filter(floors == x)
+  mod <- lm(price ~ sqft_living, data = df_kc2)
+  coeff <- coef(mod)
+  ggplot(df_kc2, aes(x = sqft_living,y = price)) + 
+    geom_point(aes(color = bedrooms)) + 
+    geom_abline(intercept = coeff[1], slope = coeff[2]) +
+    ##facet_wrap(~floors, ncol = 2) + 
+    labs(title = sprintf("Housing price vs Square foot for a house with %.1f floors", x), x = "Square foot", 
+         y = "Price")
+}
+```
+
+### Applying the code above
+
+```{r}
+par(mfrow = c(3,2))
+print_out(df_kc, 1)
+print_out(df_kc, 1.5)
+print_out(df_kc, 2.0)
+print_out(df_kc, 2.5)
+print_out(df_kc, 3.0)
+print_out(df_kc, 3.5)
+par(mfrow = c(1,1))
+
+```
+
+
+### Histogram of Bedrooms
+
+
+```{r, kc-bed-hist}
+ggplot(df_kc) +
+  geom_histogram(aes(x = bedrooms), binwidth = 1) +
+  coord_cartesian(xlim = c(0,10)) +
+  labs(title = "A histogram of the frequency of bedrooms")
+
+```
+
+### A boxplot of bedrooms' prices
+
+```{r, fig.width=9, fig.height=9}
+ggplot(df_kc) +
+  geom_boxplot(aes(x = bedrooms, y = price, group = bedrooms)) +
+  coord_cartesian(xlim = c(0, 15))
+```
+
+### A frequency polygon plot for bedrooms
+
+```{r, kc-freq, fig.height=9, fig.width=9}
+df_kc$floors <- as.factor(df_kc$floors)
+ggplot(df_kc) +
+  geom_freqpoly(aes(x = bedrooms, color = floors), binwidth = 1) +
+  coord_cartesian(xlim = c(0,10)) +
+  labs(title = "A frequency ploygon plot of bedrooms based on the number of floors")
+
+```
+
+```{r}
+sprintf("The house with the most bedrooms has %d bedrooms", max(df_kc$bedrooms))
+sprintf("The most expensive house costs $%d" , max(df_kc$price))
+```
+
