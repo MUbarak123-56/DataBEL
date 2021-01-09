@@ -88,10 +88,12 @@ ggplot(df_kc) +
 
 ```{r, kc-freq, fig.height=9, fig.width=9}
 df_kc$floors <- as.factor(df_kc$floors)
-ggplot(df_kc) +
+df_kc_freqplot <- ggplot(df_kc) +
   geom_freqpoly(aes(x = bedrooms, color = floors), binwidth = 1) +
   coord_cartesian(xlim = c(0,10)) +
   labs(title = "A frequency ploygon plot of bedrooms based on the number of floors")
+df_kc_freqplot
+ggsave("df_kc_freqplot.png", df_kc_freqplot, width = 9, height = 9)
 
 ```
 
