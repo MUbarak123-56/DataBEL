@@ -102,3 +102,8 @@ sprintf("The house with the most bedrooms has %d bedrooms", max(df_kc$bedrooms))
 sprintf("The most expensive house costs $%d" , max(df_kc$price))
 ```
 
+```{r}
+df_kc2 <- df_kc[which.max(df_kc$price),]
+df_kc2$price
+```
+
