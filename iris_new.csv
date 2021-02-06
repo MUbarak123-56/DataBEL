@@ -1,0 +1,13 @@
+"","species","feature","number"
+"1","setosa","sepal_length",5.006
+"2","versicolor","sepal_length",5.936
+"3","virginica","sepal_length",6.588
+"4","setosa","sepal_width",3.428
+"5","versicolor","sepal_width",2.77
+"6","virginica","sepal_width",2.974
+"7","setosa","petal_length",1.462
+"8","versicolor","petal_length",4.26
+"9","virginica","petal_length",5.552
+"10","setosa","petal_width",0.246
+"11","versicolor","petal_width",1.326
+"12","virginica","petal_width",2.026
