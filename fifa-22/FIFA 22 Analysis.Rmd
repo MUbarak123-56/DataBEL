@@ -1,0 +1,103 @@
+---
+title: "Signing the best youngsters for FIFA 22 manager mode."
+author: "Mubarak Ganiyu"
+date: "11/16/2021"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+
+```{r}
+library(tidyverse)
+library(janitor)
+```
+
+## Introduction
+
+When I play FIFA on season mode, I often struggle to sign players due to financial constraints and having no proper idea of which players to sign. The objective of this research is to find those players on FIFA 22 who have a lot of potential for growth while still being cheap to acquire. 
+
+```{r}
+df <- read.csv("~/DataBEL/fifa-22/players_22.csv", encoding = "UTF-8") %>% 
+  clean_names()
+```
+
+### Does age have an impact on growth?
+
+```{r, fig.width = 10, fig.height=7}
+df %>% 
+  mutate(grow = potential - overall) %>%
+  ggplot() +
+  geom_jitter(aes(x = age, y = grow), color = "blue") +
+  labs(title = "Players' Expected Growth diminishes as they age",
+       x = "Age",
+       y = "Expected Growth") +
+  theme_bw() +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+It can be observed in the chart above that as players age their potential for growth declines. 
+
+### Which players have the biggest expected growth in FIFA 22?
+
+#### Top 100 players with the biggest expected growth in FIFA 22
+
+```{r}
+df_growth <- df %>% 
+  mutate(grow = potential - overall) %>% 
+  select(short_name, long_name, grow, overall, potential, club_name,
+         club_position, age, player_positions, league_name,
+         value_eur) %>% 
+  arrange(desc(grow)) %>% 
+  head(100)
+df_growth[,c("short_name", "grow", "overall","potential", "club_name")] %>% 
+  arrange(desc(potential))
+```
+
+Due to the fact that these players' potentials are quite mediocre and not high enough for the players to become world class soccer players, we shall narrow it down to players who have the potential of exceeding 85 or more ratings. Since our objective is to acquire these players for cheap. Then, we shall focus on players who are worth less than 30 million euros. This group of talented cheap players shall be called the Cheap Footy Talent.
+
+### Which players in FIFA 22 can be classified as members of the Footy Talent class?
+
+#### The Footy Talent's top 100
+
+```{r}
+df_growth <- df %>% 
+  filter(potential >= 85) %>% 
+  filter(value_eur <= 30000000) %>% 
+  mutate(grow = potential - overall) %>% 
+  select(short_name, long_name, grow, overall, potential, club_name,
+         club_position, age, player_positions, league_name,
+         value_eur) %>% 
+  arrange(desc(grow)) %>% 
+  head(100)
+df_growth[,c("short_name", "grow", "overall","potential", "club_name")] %>% 
+  arrange(desc(grow))
+```
+Dane Pharell Scarlett is the man to sign if you want to get a player who has a lot of room for growth. Moreover, he is not expensive as he is currently worth about 1,500,000 euros.
+
+### Arranging Footy Talent players in terms of value
+
+```{r}
+df_growth %>% 
+  select(short_name, age, potential, value_eur,player_positions) %>% 
+  arrange(value_eur)
+```
+
+
+### The leagues with the most footy talent
+
+```{r, fig.width = 10, fig.height = 7}
+df_growth %>% 
+  count(league_name) %>%
+  arrange(desc(n)) %>% 
+  head(10) %>% 
+  ggplot() +
+  geom_col(aes(x = reorder(league_name, -n), y = n), fill = "blue") +
+  labs(title = "Top 10 leagues with the most footy talent on FIFA 22", x = "League", y = "Number of Talent") +
+  theme_bw() +
+  theme(plot.title =element_text(hjust = 0.5),
+        axis.text.x = element_text(angle = 60, hjust = 1))
+  
+```
+
+The Premier League is where the best talents lie. Followed by the Spanish Pimera Division. Italian Serie A comes in third place.
